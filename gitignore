@@ -1,27 +1,4 @@
-# Python
 __pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-
-# Django
-*.log
-local_settings.py
-db.sqlite3
-media/
-
-# Variables de entorno (NUNCA subir al repo)
+*.pyc
 .env
-
-# Docker
-postgres_data/
-
-# VS Code
-.vscode/
-
-# Mac
-.DS_Store
+*.sqlite3
