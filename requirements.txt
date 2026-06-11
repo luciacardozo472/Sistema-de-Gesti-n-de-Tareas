@@ -5,3 +5,12 @@ psycopg2-binary
 django-cors-headers
 channels
 channels-redis
+
+django
+djangorestframework
+djangorestframework-simplejwt
+psycopg2-binary
+django-cors-headers
+channels
+channels-redis
+daphne

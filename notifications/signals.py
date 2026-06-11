@@ -16,3 +16,11 @@ def notify_card_assignment(sender, instance, created, **kwargs):
             recipient=instance.assigned_to,
             message=message
         )
+        channel_layer = get_channel_layer()
+        async_to_sync(channel_layer.group_send)(
+            f'user_{instance.assigned_to.id}',
+            {
+                'type': 'notification_message',
+                'message': message,
+            }
+        )
