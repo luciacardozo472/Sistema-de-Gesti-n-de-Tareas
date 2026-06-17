@@ -1,20 +1,18 @@
 from rest_framework import serializers
-from .models import Board, List, Card
-
+from ..models import Board, List, Card
 
 class CardSerializer(serializers.ModelSerializer):
+    assigned_to_username = serializers.ReadOnlyField(source='assigned_to.username')
+
     class Meta:
         model = Card
         fields = [
-            'id',
-            'title',
-            'description',
-            'list',
-            'position',
-            'assigned_to',
+            'id', 'title', 'description',
+            'list', 'position',
+            'assigned_to', 'assigned_to_username',
             'created_at'
         ]
-        read_only_fields = ['id', 'created_at']
+        read_only_fields = ['id', 'created_at', 'assigned_to_username']
 
 
 class ListSerializer(serializers.ModelSerializer):
